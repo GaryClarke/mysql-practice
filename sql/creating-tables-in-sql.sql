@@ -1,13 +1,14 @@
 -- Create a simple employee table
-CREATE TABLE employee (
+CREATE TABLE employees (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100),
     age INT,
+    salary INT,  -- salary as an integer
     department VARCHAR(50)
 );
 
 -- Add a CHECK constraint to ensure employees are at least 18 years old
-ALTER TABLE employee
+ALTER TABLE employees
     ADD CONSTRAINT chk_age CHECK (age >= 18);
 
 -- Create a department table with a unique and not null constraint on the name
@@ -21,6 +22,7 @@ CREATE TABLE employee (
     id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100),
     age INT,
+    salary INT,  -- salary as an integer
     department_id INT,
     FOREIGN KEY (department_id) REFERENCES department(department_id)
 );
@@ -36,4 +38,4 @@ CREATE TABLE project (
 -- Add a foreign key in the project table to reference employees (assuming a manager relationship)
 ALTER TABLE project
     ADD COLUMN manager_id INT,
-    ADD CONSTRAINT fk_manager FOREIGN KEY (manager_id) REFERENCES employee(id);
+    ADD CONSTRAINT fk_manager FOREIGN KEY (manager_id) REFERENCES employees(id);
