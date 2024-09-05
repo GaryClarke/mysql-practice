@@ -32,7 +32,7 @@ CREATE TABLE project (
     project_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(100) UNIQUE,
     start_date DATE,
-    budget DECIMAL(10, 2)
+    budget INT
 );
 
 -- Add a foreign key in the project table to reference employees (assuming a manager relationship)
