@@ -1,3 +1,4 @@
+-- use this for transactions lesson
 -- Start a transaction
 START TRANSACTION;
 -- Comment: Begins a new transaction, isolating the following operations from other database activity until they are committed or rolled back.
