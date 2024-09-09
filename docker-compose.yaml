@@ -23,7 +23,8 @@ services:
             - app  # Ensures Nginx starts after the PHP service
         restart: unless-stopped
     app:
-        image: garyclarke/php83-multi
+        build:
+            context: ./docker
         volumes:
             - .:/var/www/html
         extra_hosts:
